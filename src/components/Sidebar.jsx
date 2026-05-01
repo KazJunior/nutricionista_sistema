@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, LogOut, Sun, Moon } from 'lucide-react';
+import { LayoutDashboard, Users, Calendar, LogOut, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Logo } from './ui/Layout';
@@ -41,6 +41,13 @@ const Sidebar = ({ isOpen, onClose }) => {
         >
           <Users size={20} />
           <span>Pacientes</span>
+        </NavLink>
+        <NavLink
+          to="/agenda"
+          className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+        >
+          <Calendar size={20} />
+          <span>Agenda da Semana</span>
         </NavLink>
       </nav>
 

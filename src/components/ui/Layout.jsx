@@ -3,15 +3,11 @@ import { Leaf } from 'lucide-react';
 
 export const Logo = () => (
   <div className="logo-container">
-    <img 
-      src="/logo.png" 
-      alt="NutriCore Logo" 
+    <Leaf 
+      size={32} 
       style={{ 
-        width: '40px', 
-        height: '40px', 
-        objectFit: 'contain',
-        borderRadius: '50%',
-        backgroundColor: 'transparent'
+        color: 'var(--primary)',
+        flexShrink: 0
       }} 
     />
     <span className="logo-text">NutriCore</span>

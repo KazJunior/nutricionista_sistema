@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Patients from './pages/Patients';
 import PatientForm from './pages/PatientForm';
 import PatientProfile from './pages/PatientProfile';
+import WeekConsultations from './pages/WeekConsultations';
 
 import { ThemeProvider } from './contexts/ThemeContext';
 
@@ -59,6 +60,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <PatientProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/agenda"
+            element={
+              <ProtectedRoute>
+                <WeekConsultations />
               </ProtectedRoute>
             }
           />

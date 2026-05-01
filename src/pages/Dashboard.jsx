@@ -137,7 +137,7 @@ const Dashboard = () => {
         ) : (
           <div className="stats-grid">
             {/* Card 1: Total Patients */}
-            <div className="stat-card">
+            <Link to="/pacientes" className="stat-card" style={{ textDecoration: 'none' }}>
               <div className="stat-header">
                 <span className="stat-title">Total de Pacientes</span>
                 <div className="stat-icon">
@@ -148,13 +148,13 @@ const Dashboard = () => {
               <p style={{ fontSize: '0.875rem', color: 'var(--gray-600)', marginTop: '0.5rem' }}>
                 Pacientes ativos no sistema
               </p>
-            </div>
+            </Link>
 
             {/* Card 2: Week Consultations */}
-            <div className="stat-card">
+            <Link to="/agenda" className="stat-card" style={{ textDecoration: 'none' }}>
               <div className="stat-header">
                 <span className="stat-title">Consultas da Semana</span>
-                <div className="stat-icon" style={{ backgroundColor: '#e0f2fe', color: '#0ea5e9' }}>
+                <div className="stat-icon" style={{ backgroundColor: 'var(--primary-light)', color: 'var(--primary-dark)' }}>
                   <Calendar size={20} />
                 </div>
               </div>
@@ -162,7 +162,7 @@ const Dashboard = () => {
               <p style={{ fontSize: '0.875rem', color: 'var(--gray-600)', marginTop: '0.5rem' }}>
                 Agendadas para esta semana
               </p>
-            </div>
+            </Link>
 
             {/* Card 3: Patients without return */}
             <div className="stat-card" style={{ gridColumn: 'span 1' }}>
