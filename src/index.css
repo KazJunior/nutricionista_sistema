@@ -45,6 +45,8 @@ body {
   background-color: var(--gray-50);
   color: var(--gray-800);
   line-height: 1.5;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
@@ -229,6 +231,8 @@ body {
   padding: 2rem;
   background-color: var(--gray-50);
   transition: margin-left 0.3s ease;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 /* Mobile Sidebar Toggle */
@@ -379,6 +383,15 @@ body {
 .patient-list {
   list-style: none;
   margin-top: 1rem;
+}
+
+.table-container {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* AI Meal Plan Styles */

@@ -535,9 +535,9 @@ const PatientProfile = () => {
                     <h3 style={{ fontSize: '1.125rem', fontWeight: '700' }}>Evolução de Peso</h3>
                   </div>
                   
-                  <div style={{ height: '300px', width: '100%' }}>
+                  <div style={{ height: '300px', width: '100%', position: 'relative' }}>
                     {chartData.length > 0 ? (
-                      <ResponsiveContainer width="100%" height="100%">
+                      <ResponsiveContainer width="100%" height="100%" key={activeMainTab}>
                         <LineChart data={chartData}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                           <XAxis dataKey="data" axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} dy={10} />
@@ -900,12 +900,7 @@ const PatientProfile = () => {
           color: var(--white);
           border-color: var(--primary);
         }
-        .table-container {
-          background: var(--white);
-          border-radius: 1rem;
-          overflow-x: auto;
-          border: 1px solid var(--border-color);
-        }
+
         .consult-table {
           width: 100%;
           border-collapse: collapse;
