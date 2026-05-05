@@ -356,13 +356,13 @@ const PatientProfile = () => {
         {/* TOP-LEVEL TABS */}
         <div className="main-tabs-nav">
           <button className={`main-tab-link ${activeMainTab === 'dados' ? 'active' : ''}`} onClick={() => setActiveMainTab('dados')}>
-            <User size={18} /> Dados do Paciente
+            <User size={18} /> <span>Dados</span>
           </button>
           <button className={`main-tab-link ${activeMainTab === 'consultas' ? 'active' : ''}`} onClick={() => setActiveMainTab('consultas')}>
-            <Activity size={18} /> Consultas
+            <Activity size={18} /> <span>Consultas</span>
           </button>
           <button className={`main-tab-link ${activeMainTab === 'planos' ? 'active' : ''}`} onClick={() => setActiveMainTab('planos')}>
-            <Coffee size={18} /> Planos Alimentares
+            <Coffee size={18} /> <span>Planos</span>
           </button>
         </div>
 
@@ -1021,13 +1021,26 @@ const PatientProfile = () => {
             grid-template-columns: 1fr;
           }
           .main-tabs-nav {
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-            gap: 0.5rem;
+            overflow-x: hidden;
+            padding-bottom: 0;
+            gap: 0;
+            display: flex;
+            width: 100%;
           }
           .main-tab-link {
-            padding: 0.75rem 1rem;
-            font-size: 0.875rem;
+            flex: 1;
+            padding: 1rem 0.5rem;
+            font-size: 0.75rem;
+            justify-content: center;
+            gap: 0.4rem;
+          }
+          .main-tab-link span {
+            display: none;
+          }
+          @media (min-width: 400px) {
+            .main-tab-link span {
+              display: inline;
+            }
           }
           .tab-link {
             padding: 1rem 1.25rem;
