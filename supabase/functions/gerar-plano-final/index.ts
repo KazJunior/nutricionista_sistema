@@ -1,3 +1,4 @@
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { z } from "https://deno.land/x/zod@v3.23.8/mod.ts";
 
 const GEMINI_API_KEY = Deno.env.get("GOOGLE_API_KEY");
@@ -26,7 +27,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
@@ -72,7 +73,7 @@ Deno.serve(async (req) => {
       RETORNE APENAS O JSON, SEM FORMATAÇÃO MARKDOWN OU TEXTO EXTRA.
     `;
 
-    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY;
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GEMINI_API_KEY;
 
     let attempts = 0;
     const maxAttempts = 3;
@@ -126,9 +127,10 @@ Deno.serve(async (req) => {
 
     throw new Error("Não foi possível gerar um plano válido após " + maxAttempts + " tentativas. Último erro: " + lastError);
 
-  } catch (error) {
-    console.error("Erro final na função:", error.message);
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
+    console.error("Erro final na função:", errorMessage);
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 400,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

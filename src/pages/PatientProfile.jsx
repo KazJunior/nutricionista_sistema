@@ -697,7 +697,7 @@ const PatientProfile = () => {
                             <div className="meal-items-list">
                               {items.map((item, itemIdx) => (
                                 <div key={itemIdx} className="meal-item-edit">
-                                  <span style={{ color: 'var(--gray-400)', fontSize: '0.75rem' }}>{itemIdx + 1}</span>
+                                  <span style={{ color: 'var(--gray-600)', fontSize: '0.75rem' }}>{itemIdx + 1}</span>
                                   <input 
                                     type="text" 
                                     className="meal-item-input"
