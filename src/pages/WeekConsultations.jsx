@@ -186,6 +186,11 @@ const WeekConsultations = () => {
             width: 100%;
           }
         }
+        @media (max-width: 768px) {
+          header h1 {
+            font-size: 1.5rem !important;
+          }
+        }
       `}} />
     </div>
   );

@@ -204,6 +204,20 @@ const Patients = () => {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
+        @media (max-width: 768px) {
+          .patient-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          header {
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 1rem;
+          }
+          header .btn {
+            width: 100% !important;
+          }
+        }
       `}} />
     </div>
   );

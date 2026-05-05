@@ -1028,6 +1028,38 @@ const PatientProfile = () => {
           .main-tabs-nav {
             overflow-x: auto;
             padding-bottom: 0.5rem;
+            gap: 0.5rem;
+          }
+          .main-tab-link {
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+          }
+          .tab-link {
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+          }
+          .modal-container {
+            max-width: 100%;
+            border-radius: 1rem;
+          }
+          .modal-body {
+            padding: 1.5rem;
+          }
+          .section-title {
+            font-size: 1.25rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .main-content {
+            padding: 1rem;
+            padding-top: 5.5rem;
+          }
+          .nav-item {
+            font-size: 0.875rem;
+          }
+          .consult-table th, .consult-table td {
+            padding: 0.75rem 0.5rem;
+            font-size: 0.75rem;
           }
         }
       `}} />

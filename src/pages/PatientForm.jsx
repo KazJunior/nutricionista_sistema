@@ -731,6 +731,26 @@ const PatientForm = () => {
           .grid-2, .grid-3 {
             grid-template-columns: 1fr;
           }
+          .tab-btn {
+            padding: 1rem 0.5rem;
+            font-size: 0.875rem;
+          }
+          .auth-card {
+            border-radius: 1rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .main-content {
+            padding: 1rem;
+            padding-top: 5.5rem;
+          }
+          .tab-btn span {
+            display: none;
+          }
+          .option-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+          }
         }
       `}} />
     </div>
